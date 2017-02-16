@@ -1400,11 +1400,11 @@ public abstract class DfuBaseService extends IntentService implements DfuProgres
 						.setProgress(100, 0, true);
 				break;
 			case PROGRESS_COMPLETED:
-				builder.setOngoing(false).setContentTitle(getString(fakeR.getId("string", "dfu_status_completed"))).setSmallIcon(android.R.drawable.stat_sys_upload_done)
+				builder.setOngoing(false).setContentTitle(getString(fakeR.getId("string", "dfu_status_completed"))).setSmallIcon(fakeR.getId("drawable", "stat_sys_upload_done"))
 						.setContentText(getString(fakeR.getId("string", "dfu_status_completed_msg"))).setAutoCancel(true).setColor(0xFF00B81A);
 				break;
 			case PROGRESS_ABORTED:
-				builder.setOngoing(false).setContentTitle(getString(fakeR.getId("string", "dfu_status_aborted"))).setSmallIcon(android.R.drawable.stat_sys_upload_done)
+				builder.setOngoing(false).setContentTitle(getString(fakeR.getId("string", "dfu_status_aborted"))).setSmallIcon(fakeR.getId("drawable", "stat_sys_upload_done"))
 						.setContentText(getString(fakeR.getId("string", "dfu_status_aborted_msg"))).setAutoCancel(true);
 				break;
 			default:

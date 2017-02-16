@@ -18,8 +18,8 @@
       <file leaf-file-name="DfuBaseService.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/DfuBaseService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="1395" column="193" lean-forward="false" selection-start-line="1395" selection-start-column="193" selection-end-line="1395" selection-end-column="193" />
+            <state relative-caret-position="348">
+              <caret line="1406" column="175" lean-forward="false" selection-start-line="1406" selection-start-column="175" selection-end-line="1406" selection-end-column="175" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="imports" expanded="true" />
@@ -960,8 +960,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/DfuBaseService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="1395" column="193" lean-forward="false" selection-start-line="1395" selection-start-column="193" selection-end-line="1395" selection-end-column="193" />
+        <state relative-caret-position="348">
+          <caret line="1406" column="175" lean-forward="false" selection-start-line="1406" selection-start-column="175" selection-end-line="1406" selection-end-column="175" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
