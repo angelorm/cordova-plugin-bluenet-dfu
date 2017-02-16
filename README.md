@@ -2,6 +2,8 @@
 
 The plugin uses the Nordic Android DFU Library available [here](https://github.com/NordicSemiconductor/Android-DFU-Library) and provides an uploadFirmware function for Cordova.
 
+The plugin is updated to the version 1.1.1 of the Android DFU Library.
+
 The following functions are available:
 
 1. `uploadFirmware(updateCallback, errorCallback, parameter)`
@@ -50,13 +52,16 @@ Same for the init file which is optional and doesn't have to be provided.
 		(Boolean)fakeR.getBuildConfigValue("DEBUG")
 
 
-## Workarounds
+## Common problems and workarounds
 
-#### Manifest merger failed
-This problem usually happened `uses-sdk:minSdkVersion 15 cannot be smaller than version 18 declared in library`. My workaround is to use the following command to run to device `ionic run android -- --minSdkVersion=18`.
+### Manifest merger failed
+EROR: `uses-sdk:minSdkVersion 15 cannot be smaller than version 18 declared in library`.
+* My workaround is to use the following command to run to device `ionic run android -- --minSdkVersion=18`.
 
-#### Multiple dex files
-It might happen that you have a `Multiple dex files define Landroid/support/v4/accessibilityservice/AccessibilityServiceInfoCompat$AccessibilityServiceInfoVersionImpl;` error similar to this. I've added the following to my `platforms/android/build.grade`:
+### Multiple dex files
+ERROR: `Multiple dex files define Landroid/support/v4/accessibilityservice/AccessibilityServiceInfoCompat$AccessibilityServiceInfoVersionImpl;` or similar.
+
+Please add the following to the file `platforms/android/build.grade`:
 ```
 	defaultConfig {
 			multiDexEnabled true
@@ -78,3 +83,7 @@ The copyrights (2014-2015) for the code belongs to the team of Distributed Organ
 * License: LGPL v3+, Apache, or MIT, your choice
 * Almende B.V., http://www.almende.com and DoBots B.V., http://www.dobots.nl
 * Rotterdam, The Netherlands
+
+### Forked
+
+This plugin was forked by Angelo Martins at 15 Feb. 2017

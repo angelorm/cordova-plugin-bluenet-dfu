@@ -1,7 +1,7 @@
 {
   "name": "cordova-plugin-bluenet-dfu",
-  "version": "0.0.1",
-  "description": "Upload bluenet code over DFU",
+  "version": "0.0.3",
+  "description": "Upload code over DFU",
   "cordova": {
     "id": "cordova-plugin-bluenet-dfu",
     "platforms": [
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dobots/cordova-plugin-bluenet-dfu.git"
+    "url": "git+https://github.com/angelorm/cordova-plugin-bluenet-dfu.git"
   },
   "keywords": [
     "bluenet",
@@ -18,10 +18,10 @@
     "ecosystem:cordova",
     "cordova-android"
   ],
-  "author": "Dominik Egger",
+  "author": "Dominik Egger, Ângelo Martins",
   "license": "LGPL v3+, Apache, or MIT, your choice",
   "bugs": {
-    "url": "https://github.com/dobots/cordova-plugin-bluenet-dfu/issues"
+    "url": "https://github.com/angelorm/cordova-plugin-bluenet-dfu/issues"
   },
-  "homepage": "https://github.com/dobots/cordova-plugin-bluenet-dfu#readme"
+  "homepage": "https://github.com/angelorm/cordova-plugin-bluenet-dfu#readme"
 }
