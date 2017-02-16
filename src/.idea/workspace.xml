@@ -15,11 +15,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DfuBaseService.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DfuBaseService.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/DfuBaseService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="816">
-              <caret line="1437" column="7" lean-forward="true" selection-start-line="1437" selection-start-column="7" selection-end-line="1437" selection-end-column="7" />
+            <state relative-caret-position="222">
+              <caret line="1395" column="193" lean-forward="false" selection-start-line="1395" selection-start-column="193" selection-end-line="1395" selection-end-column="193" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="imports" expanded="true" />
@@ -28,7 +28,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DfuServiceListenerHelper.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DfuServiceListenerHelper.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/DfuServiceListenerHelper.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="276">
@@ -182,8 +182,8 @@
       <list>
         <option value="$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/DfuService.java" />
         <option value="$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/internal/ArchiveInputStream.java" />
-        <option value="$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/DfuBaseService.java" />
         <option value="$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/DfuServiceListenerHelper.java" />
+        <option value="$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/DfuBaseService.java" />
       </list>
     </option>
   </component>
@@ -950,22 +950,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/DfuBaseService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="1437" column="7" lean-forward="true" selection-start-line="1437" selection-start-column="7" selection-end-line="1437" selection-end-column="7" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/DfuServiceListenerHelper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
           <caret line="111" column="101" lean-forward="false" selection-start-line="111" selection-start-column="101" selection-end-line="111" selection-end-column="101" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/DfuBaseService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="1395" column="193" lean-forward="false" selection-start-line="1395" selection-start-column="193" selection-end-line="1395" selection-end-column="193" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

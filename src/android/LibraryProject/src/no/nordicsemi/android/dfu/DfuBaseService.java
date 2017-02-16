@@ -1393,7 +1393,7 @@ public abstract class DfuBaseService extends IntentService implements DfuProgres
 						.setProgress(100, 0, true);
 				break;
 			case PROGRESS_VALIDATING:
-				builder.setOngoing(true).setContentTitle(getString(fakeR.getId("string", "dfu_status_validating"))).setContentText(getString(fakeR.getId("string", "dfu_status_validating_msg")).setProgress(100, 0, true);
+				builder.setOngoing(true).setContentTitle(getString(fakeR.getId("string", "dfu_status_validating"))).setContentText(getString(fakeR.getId("string", "dfu_status_validating_msg"))).setProgress(100, 0, true);
 				break;
 			case PROGRESS_DISCONNECTING:
 				builder.setOngoing(true).setContentTitle(getString(fakeR.getId("string", "dfu_status_disconnecting"))).setContentText(getString(fakeR.getId("string", "dfu_status_disconnecting_msg"), deviceName))
