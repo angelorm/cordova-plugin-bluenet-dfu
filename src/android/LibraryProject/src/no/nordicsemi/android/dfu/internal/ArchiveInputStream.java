@@ -109,7 +109,7 @@ public class ArchiveInputStream extends ZipInputStream {
 		super(stream);
 
 		this.crc32 = new CRC32();
-		this.entries = new HashMap<>();
+		this.entries = new HashMap<String, byte[]>();
 		this.bytesRead = 0;
 		this.bytesReadFromCurrentSource = 0;
 
@@ -383,7 +383,7 @@ public class ArchiveInputStream extends ZipInputStream {
 
 	/**
 	 * Returns the content type based on the content of the ZIP file. The content type may be truncated using {@link #setContentType(int)}.
-	 * 
+	 *
 	 * @return a bit field of {@link DfuBaseService#TYPE_SOFT_DEVICE TYPE_SOFT_DEVICE}, {@link DfuBaseService#TYPE_BOOTLOADER TYPE_BOOTLOADER} and {@link DfuBaseService#TYPE_APPLICATION
 	 *         TYPE_APPLICATION}
 	 */
@@ -404,7 +404,7 @@ public class ArchiveInputStream extends ZipInputStream {
 
 	/**
 	 * Truncates the current content type. May be used to hide some files, f.e. to send Soft Device and Bootloader without Application or only the Application.
-	 * 
+	 *
 	 * @param type
 	 *            the new type
 	 * @return the final type after truncating
@@ -441,7 +441,7 @@ public class ArchiveInputStream extends ZipInputStream {
 
 	/**
 	 * Sets the currentSource to the new file or to <code>null</code> if the last file has been transmitted.
-	 * 
+	 *
 	 * @return the new source, the same as {@link #currentSource}
 	 */
 	private byte[] startNextFile() {

@@ -47,6 +47,7 @@ import android.provider.MediaStore;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
+import android.R;
 
 import java.io.ByteArrayInputStream;
 import java.io.FileInputStream;

@@ -52,7 +52,7 @@ public class DfuServiceListenerHelper {
 
 	private static class LogBroadcastReceiver extends BroadcastReceiver {
 		private DfuLogListener mGlobalLogListener;
-		private Map<String, DfuLogListener> mListeners = new HashMap<>();
+		private Map<String, DfuLogListener> mListeners = new HashMap<String, DfuLogListener>();
 
 		private void setLogListener(final DfuLogListener globalLogListener) {
 			this.mGlobalLogListener = globalLogListener;
@@ -109,7 +109,7 @@ public class DfuServiceListenerHelper {
 
 	private static class ProgressBroadcastsReceiver extends BroadcastReceiver {
 		private DfuProgressListener mGlobalProgressListener;
-		private Map<String, DfuProgressListener> mListeners = new HashMap<>();
+		private Map<String, DfuProgressListener> mListeners = new HashMap<String, DfuProgressListener>();
 
 		private void setProgressListener(final DfuProgressListener globalProgressListener) {
 			this.mGlobalProgressListener = globalProgressListener;
@@ -156,107 +156,98 @@ public class DfuServiceListenerHelper {
 
 			final String action = intent.getAction();
 
-			switch (action) {
-				case DfuBaseService.BROADCAST_PROGRESS: {
-					final int progress = intent.getIntExtra(DfuBaseService.EXTRA_DATA, 0);
-					final float speed = intent.getFloatExtra(DfuBaseService.EXTRA_SPEED_B_PER_MS, 0.0f);
-					final float avgSpeed = intent.getFloatExtra(DfuBaseService.EXTRA_AVG_SPEED_B_PER_MS, 0.0f);
-					final int currentPart = intent.getIntExtra(DfuBaseService.EXTRA_PART_CURRENT, 0);
-					final int partsTotal = intent.getIntExtra(DfuBaseService.EXTRA_PARTS_TOTAL, 0);
-
-					switch (progress) {
-						case DfuBaseService.PROGRESS_CONNECTING:
-							if (globalListener != null)
-								globalListener.onDeviceConnecting(address);
-							if (deviceListener != null)
-								deviceListener.onDeviceConnecting(address);
-							break;
-						case DfuBaseService.PROGRESS_STARTING:
-							if (globalListener != null) {
-								globalListener.onDeviceConnected(address);
-								globalListener.onDfuProcessStarting(address);
-							}
-							if (deviceListener != null) {
-								deviceListener.onDeviceConnected(address);
-								deviceListener.onDfuProcessStarting(address);
-							}
-							break;
-						case DfuBaseService.PROGRESS_ENABLING_DFU_MODE:
-							if (globalListener != null)
-								globalListener.onEnablingDfuMode(address);
-							if (deviceListener != null)
-								deviceListener.onEnablingDfuMode(address);
-							break;
-						case DfuBaseService.PROGRESS_VALIDATING:
-							if (globalListener != null)
-								globalListener.onFirmwareValidating(address);
-							if (deviceListener != null)
-								deviceListener.onFirmwareValidating(address);
-							break;
-						case DfuBaseService.PROGRESS_DISCONNECTING:
-							if (globalListener != null)
-								globalListener.onDeviceDisconnecting(address);
-							if (deviceListener != null)
-								deviceListener.onDeviceDisconnecting(address);
-							break;
-						case DfuBaseService.PROGRESS_COMPLETED:
-							if (globalListener != null) {
-								globalListener.onDeviceDisconnected(address);
-								globalListener.onDfuCompleted(address);
-							}
-							if (deviceListener != null) {
-								deviceListener.onDeviceDisconnected(address);
-								deviceListener.onDfuCompleted(address);
-							}
-							break;
-						case DfuBaseService.PROGRESS_ABORTED:
-							if (globalListener != null) {
-								globalListener.onDeviceDisconnected(address);
-								globalListener.onDfuAborted(address);
-							}
-							if (deviceListener != null) {
-								deviceListener.onDeviceDisconnected(address);
-								deviceListener.onDfuAborted(address);
-							}
-							break;
-						default:
-							if (progress == 0) {
-								if (globalListener != null)
-									globalListener.onDfuProcessStarted(address);
-								if (deviceListener != null)
-									deviceListener.onDfuProcessStarted(address);
-							}
-							if (globalListener != null)
-								globalListener.onProgressChanged(address, progress, speed, avgSpeed, currentPart, partsTotal);
-							if (deviceListener != null)
-								deviceListener.onProgressChanged(address, progress, speed, avgSpeed, currentPart, partsTotal);
-							break;
-					}
-
-					break;
-				}
-				case DfuBaseService.BROADCAST_ERROR: {
-					final int error = intent.getIntExtra(DfuBaseService.EXTRA_DATA, 0);
-					final int errorType = intent.getIntExtra(DfuBaseService.EXTRA_ERROR_TYPE, 0);
-
+			if (action == DfuBaseService.BROADCAST_PROGRESS) {
+				final int progress = intent.getIntExtra(DfuBaseService.EXTRA_DATA, 0);
+				final float speed = intent.getFloatExtra(DfuBaseService.EXTRA_SPEED_B_PER_MS, 0.0f);
+				final float avgSpeed = intent.getFloatExtra(DfuBaseService.EXTRA_AVG_SPEED_B_PER_MS, 0.0f);
+				final int currentPart = intent.getIntExtra(DfuBaseService.EXTRA_PART_CURRENT, 0);
+				final int partsTotal = intent.getIntExtra(DfuBaseService.EXTRA_PARTS_TOTAL, 0);
+				if (progress == DfuBaseService.PROGRESS_CONNECTING) {
 					if (globalListener != null)
-						globalListener.onDeviceDisconnected(address);
+						globalListener.onDeviceConnecting(address);
 					if (deviceListener != null)
-						deviceListener.onDeviceDisconnected(address);
-					switch (errorType) {
-						case DfuBaseService.ERROR_TYPE_COMMUNICATION_STATE:
-							if (globalListener != null)
-								globalListener.onError(address, error, errorType, GattError.parseConnectionError(error));
-							if (deviceListener != null)
-								deviceListener.onError(address, error, errorType, GattError.parseConnectionError(error));
-							break;
-						default:
-							if (globalListener != null)
-								globalListener.onError(address, error, errorType, GattError.parse(error));
-							if (deviceListener != null)
-								deviceListener.onError(address, error, errorType, GattError.parse(error));
-							break;
+						deviceListener.onDeviceConnecting(address);
+
+				} else if (progress == DfuBaseService.PROGRESS_STARTING) {
+					if (globalListener != null) {
+						globalListener.onDeviceConnected(address);
+						globalListener.onDfuProcessStarting(address);
 					}
+					if (deviceListener != null) {
+						deviceListener.onDeviceConnected(address);
+						deviceListener.onDfuProcessStarting(address);
+					}
+
+				} else if (progress == DfuBaseService.PROGRESS_ENABLING_DFU_MODE) {
+					if (globalListener != null)
+						globalListener.onEnablingDfuMode(address);
+					if (deviceListener != null)
+						deviceListener.onEnablingDfuMode(address);
+
+				} else if (progress == DfuBaseService.PROGRESS_VALIDATING) {
+					if (globalListener != null)
+						globalListener.onFirmwareValidating(address);
+					if (deviceListener != null)
+						deviceListener.onFirmwareValidating(address);
+
+				} else if (progress == DfuBaseService.PROGRESS_DISCONNECTING) {
+					if (globalListener != null)
+						globalListener.onDeviceDisconnecting(address);
+					if (deviceListener != null)
+						deviceListener.onDeviceDisconnecting(address);
+
+				} else if (progress == DfuBaseService.PROGRESS_COMPLETED) {
+					if (globalListener != null) {
+						globalListener.onDeviceDisconnected(address);
+						globalListener.onDfuCompleted(address);
+					}
+					if (deviceListener != null) {
+						deviceListener.onDeviceDisconnected(address);
+						deviceListener.onDfuCompleted(address);
+					}
+
+				} else if (progress == DfuBaseService.PROGRESS_ABORTED) {
+					if (globalListener != null) {
+						globalListener.onDeviceDisconnected(address);
+						globalListener.onDfuAborted(address);
+					}
+					if (deviceListener != null) {
+						deviceListener.onDeviceDisconnected(address);
+						deviceListener.onDfuAborted(address);
+					}
+
+				} else {
+					if (progress == 0) {
+						if (globalListener != null)
+							globalListener.onDfuProcessStarted(address);
+						if (deviceListener != null)
+							deviceListener.onDfuProcessStarted(address);
+					}
+					if (globalListener != null)
+						globalListener.onProgressChanged(address, progress, speed, avgSpeed, currentPart, partsTotal);
+					if (deviceListener != null)
+						deviceListener.onProgressChanged(address, progress, speed, avgSpeed, currentPart, partsTotal);
+
+				}
+			} else if (action == DfuBaseService.BROADCAST_ERROR) {
+				final int error = intent.getIntExtra(DfuBaseService.EXTRA_DATA, 0);
+				final int errorType = intent.getIntExtra(DfuBaseService.EXTRA_ERROR_TYPE, 0);
+				if (globalListener != null)
+					globalListener.onDeviceDisconnected(address);
+				if (deviceListener != null)
+					deviceListener.onDeviceDisconnected(address);
+				if (errorType == DfuBaseService.ERROR_TYPE_COMMUNICATION_STATE) {
+					if (globalListener != null)
+						globalListener.onError(address, error, errorType, GattError.parseConnectionError(error));
+					if (deviceListener != null)
+						deviceListener.onError(address, error, errorType, GattError.parseConnectionError(error));
+
+				} else {
+					if (globalListener != null)
+						globalListener.onError(address, error, errorType, GattError.parse(error));
+					if (deviceListener != null)
+						deviceListener.onError(address, error, errorType, GattError.parse(error));
+
 				}
 			}
 		}
