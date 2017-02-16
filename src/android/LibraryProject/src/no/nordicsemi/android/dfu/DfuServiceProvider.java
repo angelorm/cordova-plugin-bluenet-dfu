@@ -1,5 +1,5 @@
 /*************************************************************************************************************************************************
- * Copyright (c) 2015, Nordic Semiconductor
+ * Copyright (c) 2016, Nordic Semiconductor
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
@@ -20,17 +20,31 @@
  * USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  ************************************************************************************************************************************************/
 
-package no.nordicsemi.android.dfu.exception;
+package no.nordicsemi.android.dfu;
 
-import java.io.IOException;
+import android.bluetooth.BluetoothGatt;
+import android.bluetooth.BluetoothGattService;
+import android.content.Intent;
 
-/**
- * The HEX file could not be parsed.
- */
-public class HexFileValidationException extends IOException {
-	private static final long serialVersionUID = -6467104024030837875L;
+/* package */ class DfuServiceProvider {
 
-	public HexFileValidationException(final String message) {
-		super(message);
+	/* package */ static BaseDfuImpl getDfuImpl(final Intent intent, final DfuBaseService service, final BluetoothGatt gatt) {
+		final BluetoothGattService secureService = gatt.getService(SecureDfuImpl.DFU_SERVICE_UUID);
+		if (secureService != null) {
+			return new SecureDfuImpl(intent, service);
+		}
+		final BluetoothGattService legacyService = gatt.getService(LegacyDfuImpl.DFU_SERVICE_UUID);
+		if (legacyService != null) {
+			return new LegacyDfuImpl(intent, service);
+		}
+		// Support for experimental Buttonless DFU Service from SDK 12. This feature must be explicitly enabled in the initiator.
+		final boolean enableUnsafeExperimentalButtonlessDfuService = intent.getBooleanExtra(DfuBaseService.EXTRA_UNSAFE_EXPERIMENTAL_BUTTONLESS_DFU, false);
+		if (enableUnsafeExperimentalButtonlessDfuService) {
+			final BluetoothGattService experimentalButtonlessDfuService = gatt.getService(ExperimentalButtonlessDfuImpl.EXPERIMENTAL_BUTTONLESS_DFU_SERVICE_UUID);
+			if (experimentalButtonlessDfuService != null) {
+				return new ExperimentalButtonlessDfuImpl(intent, service);
+			}
+		}
+		return null;
 	}
 }
