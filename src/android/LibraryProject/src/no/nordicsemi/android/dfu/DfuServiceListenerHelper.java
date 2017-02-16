@@ -109,7 +109,7 @@ public class DfuServiceListenerHelper {
 
 	private static class ProgressBroadcastsReceiver extends BroadcastReceiver {
 		private DfuProgressListener mGlobalProgressListener;
-		private Map<String, DfuProgressListener> mListeners = new HashMap<>(String, DfuProgressListener);
+		private Map<String, DfuProgressListener> mListeners = new HashMap<String, DfuProgressListener>();
 
 		private void setProgressListener(final DfuProgressListener globalProgressListener) {
 			this.mGlobalProgressListener = globalProgressListener;
