@@ -18,11 +18,10 @@
       <file leaf-file-name="DfuBaseService.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/DfuBaseService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="366">
-              <caret line="1458" column="77" lean-forward="false" selection-start-line="1458" selection-start-column="77" selection-end-line="1458" selection-end-column="77" />
+            <state relative-caret-position="18">
+              <caret line="46" column="49" lean-forward="true" selection-start-line="46" selection-start-column="49" selection-end-line="46" selection-end-column="49" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
-                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -34,7 +33,9 @@
             <state relative-caret-position="-466">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <element signature="e#0#2769#0" expanded="true" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#1748#1749#0" expanded="false" />
+                <element signature="e#1823#1824#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -156,7 +157,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>LocalBroadcastManager</find>
       <find>R.</find>
       <find>R.GET</find>
       <find>R.GETid</find>
@@ -171,6 +171,7 @@
       <find>&lt;&gt;()</find>
       <find>fakeR</find>
       <find>r.dra</find>
+      <find>LocalBroadcastManager</find>
     </findStrings>
   </component>
   <component name="GradleLocalSettings">
@@ -773,7 +774,6 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -964,18 +964,19 @@
         <state relative-caret-position="-466">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#2769#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#1748#1749#0" expanded="false" />
+            <element signature="e#1823#1824#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/DfuBaseService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="1458" column="77" lean-forward="false" selection-start-line="1458" selection-start-column="77" selection-end-line="1458" selection-end-column="77" />
+        <state relative-caret-position="18">
+          <caret line="46" column="49" lean-forward="true" selection-start-line="46" selection-start-column="49" selection-end-line="46" selection-end-column="49" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

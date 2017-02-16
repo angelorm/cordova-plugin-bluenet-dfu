@@ -49,6 +49,26 @@ Same for the init file which is optional and doesn't have to be provided.
 	6. replace all occurrences of BuildConfig.DEBUG by
 		(Boolean)fakeR.getBuildConfigValue("DEBUG")
 
+
+## Workarounds
+
+#### Manifest merger failed
+This problem usually happened `uses-sdk:minSdkVersion 15 cannot be smaller than version 18 declared in library`. My workaround is to use the following command to run to device `ionic run android -- --minSdkVersion=18`.
+
+#### Multiple dex files
+It might happen that you have a `Multiple dex files define Landroid/support/v4/accessibilityservice/AccessibilityServiceInfoCompat$AccessibilityServiceInfoVersionImpl;` error similar to this. I've added the following to my `platforms/android/build.grade`:
+```
+	defaultConfig {
+			multiDexEnabled true
+	}
+
+	configurations {
+			all*.exclude group: 'com.android.support', module: 'support-v4'
+			all*.exclude group: 'com.android.support', module: 'support-annotations'
+	}
+```
+
+
 ## Copyrights
 
 The copyrights (2014-2015) for the code belongs to the team of Distributed Organisms B.V. and are provided under an noncontagious open-source license:
