@@ -20,7 +20,9 @@
  * USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  ************************************************************************************************************************************************/
 
-package no.nordicsemi.android.dfu;
+package no.nordicsemi.android.dfu.internal;
+
+import android.support.annotation.NonNull;
 
 import com.google.gson.Gson;
 
@@ -30,13 +32,15 @@ import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
+import java.util.zip.CRC32;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
-import no.nordicsemi.android.dfu.manifest.FileInfo;
-import no.nordicsemi.android.dfu.manifest.Manifest;
-import no.nordicsemi.android.dfu.manifest.ManifestFile;
-import no.nordicsemi.android.dfu.manifest.SoftDeviceBootloaderFileInfo;
+import no.nordicsemi.android.dfu.DfuBaseService;
+import no.nordicsemi.android.dfu.internal.manifest.FileInfo;
+import no.nordicsemi.android.dfu.internal.manifest.Manifest;
+import no.nordicsemi.android.dfu.internal.manifest.ManifestFile;
+import no.nordicsemi.android.dfu.internal.manifest.SoftDeviceBootloaderFileInfo;
 
 /**
  * <p>Reads the firmware files from the a ZIP file. The ZIP file must be either created using the <b>nrf utility</b> tool, available together with Master Control Panel v3.8.0+,
@@ -60,6 +64,7 @@ public class ArchiveInputStream extends ZipInputStream {
 	/** Contains bytes arrays with BIN files. HEX files are converted to BIN before being added to this map. */
 	private Map<String, byte[]> entries;
 	private Manifest manifest;
+	private CRC32 crc32;
 
 	private byte[] applicationBytes;
 	private byte[] softDeviceBytes;
@@ -74,6 +79,9 @@ public class ArchiveInputStream extends ZipInputStream {
 	private int applicationSize;
 	private int bytesRead;
 
+	private byte[] markedSource;
+	private int bytesReadFromMarkedSource;
+
 	/**
 	 * <p>
 	 * The ArchiveInputStream read HEX or BIN files from the Zip stream. It may skip some of them, depending on the value of the types parameter.
@@ -81,15 +89,13 @@ public class ArchiveInputStream extends ZipInputStream {
 	 * the ZIP file contains all 3 HEX/BIN files.
 	 * When types is equal to {@link DfuBaseService#TYPE_AUTO} all present files are read.
 	 * </p>
-	 * <p>
-	 * Use bit combination of the following types:
+	 * <p>Use bit combination of the following types:</p>
 	 * <ul>
 	 * <li>{@link DfuBaseService#TYPE_SOFT_DEVICE}</li>
 	 * <li>{@link DfuBaseService#TYPE_BOOTLOADER}</li>
 	 * <li>{@link DfuBaseService#TYPE_APPLICATION}</li>
 	 * <li>{@link DfuBaseService#TYPE_AUTO}</li>
 	 * </ul>
-	 * </p>
 	 *
 	 * @param stream
 	 *            the Zip Input Stream
@@ -102,7 +108,8 @@ public class ArchiveInputStream extends ZipInputStream {
 	public ArchiveInputStream(final InputStream stream, final int mbrSize, final int types) throws IOException {
 		super(stream);
 
-		this.entries = new HashMap<String, byte[]>();
+		this.crc32 = new CRC32();
+		this.entries = new HashMap<>();
 		this.bytesRead = 0;
 		this.bytesReadFromCurrentSource = 0;
 
@@ -238,6 +245,7 @@ public class ArchiveInputStream extends ZipInputStream {
 					throw new IOException("The ZIP file must contain an Application, a Soft Device and/or a Bootloader.");
 				}
 			}
+			mark(0);
 		} finally {
 			super.close();
 		}
@@ -253,7 +261,7 @@ public class ArchiveInputStream extends ZipInputStream {
 	 * but than it MUST include at least one of the following files: softdevice.bin/hex, bootloader.bin/hex, application.bin/hex.
 	 * To support the init packet such ZIP file should contain also application.dat and/or system.dat (with the CRC16 of a SD, BL or SD+BL together).
 	 */
-	private void parseZip(int mbrSize) throws IOException {
+	private void parseZip(final int mbrSize) throws IOException {
 		final byte[] buffer = new byte[1024];
 		String manifestData = null;
 
@@ -303,7 +311,7 @@ public class ArchiveInputStream extends ZipInputStream {
 	}
 
 	@Override
-	public int read(final byte[] buffer) throws IOException {
+	public int read(@NonNull final byte[] buffer) throws IOException {
 		int maxSize = currentSource.length - bytesReadFromCurrentSource;
 		int size = buffer.length <= maxSize ? buffer.length : maxSize;
 		System.arraycopy(currentSource, bytesReadFromCurrentSource, buffer, 0, size);
@@ -321,7 +329,48 @@ public class ArchiveInputStream extends ZipInputStream {
 			size += nextSize;
 		}
 		bytesRead += size;
+		crc32.update(buffer, 0, size);
 		return size;
+	}
+
+	@Override
+	public boolean markSupported() {
+		return true;
+	}
+
+	/**
+	 * Marks the current position in the stream. The parameter is ignored.
+	 * @param readlimit this parameter is ignored, can be anything
+	 */
+	@Override
+	public void mark(final int readlimit) {
+		markedSource = currentSource;
+		bytesReadFromMarkedSource = bytesReadFromCurrentSource;
+	}
+
+	@Override
+	public void reset() throws IOException {
+		if (applicationBytes != null && (softDeviceBytes != null || bootloaderBytes != null || softDeviceAndBootloaderBytes != null))
+			throw new UnsupportedOperationException("Application must be sent in a separate connection.");
+
+		currentSource = markedSource;
+		bytesRead = bytesReadFromCurrentSource = bytesReadFromMarkedSource;
+
+		// Restore the CRC to the value is was on mark.
+		crc32.reset();
+		if (currentSource == bootloaderBytes && softDeviceBytes != null) {
+			crc32.update(softDeviceBytes);
+			bytesRead += softDeviceSize;
+		}
+		crc32.update(currentSource, 0, bytesReadFromCurrentSource);
+	}
+
+	/**
+	 * Returns the CRC32 of the part of the firmware that was already read.
+	 * @return the CRC
+	 */
+	public long getCrc32() {
+		return crc32.getValue();
 	}
 
 	/**
@@ -334,12 +383,16 @@ public class ArchiveInputStream extends ZipInputStream {
 
 	/**
 	 * Returns the content type based on the content of the ZIP file. The content type may be truncated using {@link #setContentType(int)}.
-	 *
+	 * 
 	 * @return a bit field of {@link DfuBaseService#TYPE_SOFT_DEVICE TYPE_SOFT_DEVICE}, {@link DfuBaseService#TYPE_BOOTLOADER TYPE_BOOTLOADER} and {@link DfuBaseService#TYPE_APPLICATION
 	 *         TYPE_APPLICATION}
 	 */
 	public int getContentType() {
 		byte b = 0;
+		// In Secure DFU the softDeviceSize and bootloaderSize may be 0 if both are in the ZIP file. The size of each part is embedded in the Init packet.
+		if (softDeviceAndBootloaderBytes != null)
+			b |= DfuBaseService.TYPE_SOFT_DEVICE | DfuBaseService.TYPE_BOOTLOADER;
+		// In Legacy DFU the size of each of these parts was given in the manifest file.
 		if (softDeviceSize > 0)
 			b |= DfuBaseService.TYPE_SOFT_DEVICE;
 		if (bootloaderSize > 0)
@@ -351,7 +404,7 @@ public class ArchiveInputStream extends ZipInputStream {
 
 	/**
 	 * Truncates the current content type. May be used to hide some files, f.e. to send Soft Device and Bootloader without Application or only the Application.
-	 *
+	 * 
 	 * @param type
 	 *            the new type
 	 * @return the final type after truncating
@@ -382,12 +435,13 @@ public class ArchiveInputStream extends ZipInputStream {
 			applicationBytes = null;
 			applicationSize = 0;
 		}
+		mark(0);
 		return t;
 	}
 
 	/**
 	 * Sets the currentSource to the new file or to <code>null</code> if the last file has been transmitted.
-	 *
+	 * 
 	 * @return the new source, the same as {@link #currentSource}
 	 */
 	private byte[] startNextFile() {
@@ -403,11 +457,20 @@ public class ArchiveInputStream extends ZipInputStream {
 		return ret;
 	}
 
-	@Override
 	/**
 	 * Returns the number of bytes that has not been read yet. This value includes only firmwares matching the content type set by the construcotor or the {@link #setContentType(int)} method.
 	 */
+	@Override
 	public int available() {
+		// In Secure DFU softdevice and bootloader sizes are not provided in the Init file (they are encoded inside the Init file instead).
+		// The service doesn't send those sizes, not the whole size of the firmware separately, like it was done in the Legacy DFU.
+		// This method then is just used to log file size.
+
+		// In case of SD+BL in Secure DFU:
+		if (softDeviceAndBootloaderBytes != null && softDeviceSize == 0 && bootloaderSize == 0)
+			return softDeviceAndBootloaderBytes.length + applicationSize - bytesRead;
+
+		// Otherwise:
 		return softDeviceSize + bootloaderSize + applicationSize - bytesRead;
 	}
 

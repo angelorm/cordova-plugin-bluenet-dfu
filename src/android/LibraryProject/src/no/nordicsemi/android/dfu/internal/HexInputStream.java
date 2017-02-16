@@ -20,7 +20,7 @@
  * USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  ************************************************************************************************************************************************/
 
-package no.nordicsemi.android.dfu;
+package no.nordicsemi.android.dfu.internal;
 
 import java.io.BufferedInputStream;
 import java.io.ByteArrayInputStream;
@@ -28,7 +28,7 @@ import java.io.FilterInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
-import no.nordicsemi.android.dfu.exception.HexFileValidationException;
+import no.nordicsemi.android.dfu.internal.exception.HexFileValidationException;
 
 /**
  * Reads the binary content from the HEX file using IntelHex standard: http://www.interlog.com/~speff/usefulinfo/Hexfrmt.pdf.
@@ -61,7 +61,7 @@ public class HexInputStream extends FilterInputStream {
 	 * @throws java.io.IOException
 	 *             if the stream is closed or another IOException occurs.
 	 */
-	protected HexInputStream(final InputStream in, final int mbrSize) throws HexFileValidationException, IOException {
+	public HexInputStream(final InputStream in, final int mbrSize) throws HexFileValidationException, IOException {
 		super(new BufferedInputStream(in));
 		this.localBuf = new byte[LINE_LENGTH];
 		this.localPos = LINE_LENGTH; // we are at the end of the local buffer, new one must be obtained
@@ -72,7 +72,7 @@ public class HexInputStream extends FilterInputStream {
 		this.available = calculateBinSize(mbrSize);
 	}
 
-	protected HexInputStream(final byte[] data, final int mbrSize) throws HexFileValidationException, IOException {
+	public HexInputStream(final byte[] data, final int mbrSize) throws HexFileValidationException, IOException {
 		super(new ByteArrayInputStream(data));
 		this.localBuf = new byte[LINE_LENGTH];
 		this.localPos = LINE_LENGTH; // we are at the end of the local buffer, new one must be obtained
@@ -113,7 +113,7 @@ public class HexInputStream extends FilterInputStream {
 					if (binSize > 0 && newULBA != (lastBaseAddress >> 16) + 1)
 						return binSize;
 					lastBaseAddress = newULBA << 16;
-					in.skip(2 /* check sum */);
+					skip(in, 2 /* check sum */);
 					break;
 				}
 				case 0x02: {
@@ -122,7 +122,7 @@ public class HexInputStream extends FilterInputStream {
 					if (binSize > 0 && (newSBA >> 16) != (lastBaseAddress >> 16) + 1)
 						return binSize;
 					lastBaseAddress = newSBA;
-					in.skip(2 /* check sum */);
+					skip(in, 2 /* check sum */);
 					break;
 				}
 				case 0x00:
@@ -132,7 +132,8 @@ public class HexInputStream extends FilterInputStream {
 						binSize += lineSize;
 					// no break!
 				default:
-					in.skip(lineSize * 2 /* 2 hex per one byte */+ 2 /* check sum */);
+					final long toBeSkipped = lineSize * 2 /* 2 hex per one byte */+ 2 /* check sum */;
+					skip(in, toBeSkipped);
 					break;
 				}
 				// skip end of line
@@ -156,7 +157,8 @@ public class HexInputStream extends FilterInputStream {
 
 	/**
 	 * Fills the buffer with next bytes from the stream.
-	 * 
+	 *
+	 * @param buffer buffer to be filled
 	 * @return the size of the buffer
 	 * @throws java.io.IOException
 	 */
@@ -264,7 +266,7 @@ public class HexInputStream extends FilterInputStream {
 				// data type
 				if (lastAddress + offset < MBRSize) { // skip MBR
 					type = -1; // some other than 0
-					pos += in.skip(lineSize * 2 /* 2 hex per one byte */+ 2 /* check sum */);
+					pos += skip(in, lineSize * 2 /* 2 hex per one byte */+ 2 /* check sum */);
 				}
 				break;
 			case 0x01:
@@ -278,7 +280,7 @@ public class HexInputStream extends FilterInputStream {
 				if (bytesRead > 0 && (address >> 16) != (lastAddress >> 16) + 1)
 					return 0;
 				lastAddress = address;
-				pos += in.skip(2 /* check sum */);
+				pos += skip(in, 2 /* check sum */);
 				break;
 			}
 			case 0x04: {
@@ -288,11 +290,12 @@ public class HexInputStream extends FilterInputStream {
 				if (bytesRead > 0 && address != (lastAddress >> 16) + 1)
 					return 0;
 				lastAddress = address << 16;
-				pos += in.skip(2 /* check sum */);
+				pos += skip(in, 2 /* check sum */);
 				break;
 			}
 			default:
-				pos += in.skip(lineSize * 2 /* 2 hex per one byte */+ 2 /* check sum */);
+				final long toBeSkipped = lineSize * 2 /* 2 hex per one byte */+ 2 /* check sum */;
+				pos += skip(in, toBeSkipped);
 				break;
 			}
 		} while (type != 0);
@@ -303,7 +306,7 @@ public class HexInputStream extends FilterInputStream {
 			pos += 2;
 			localBuf[i] = (byte) b;
 		}
-		pos += in.skip(2); // skip the checksum
+		pos += skip(in, 2); // skip the checksum
 		localPos = 0;
 
 		return lineSize;
@@ -321,6 +324,14 @@ public class HexInputStream extends FilterInputStream {
 	private void checkComma(final int comma) throws HexFileValidationException {
 		if (comma != ':')
 			throw new HexFileValidationException("Not a HEX file");
+	}
+
+	private long skip(final InputStream in, final long offset) throws IOException {
+		long skipped = in.skip(offset);
+		// try to skip 2 times as skip(..) method does not guarantee to skip exactly given number of bytes
+		if (skipped < offset)
+			skipped += in.skip(offset - skipped);
+		return skipped;
 	}
 
 	private int readByte(final InputStream in) throws IOException {

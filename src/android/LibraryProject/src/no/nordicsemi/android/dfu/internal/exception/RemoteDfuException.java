@@ -20,38 +20,28 @@
  * USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  ************************************************************************************************************************************************/
 
-package no.nordicsemi.android.dfu.exception;
+package no.nordicsemi.android.dfu.internal.exception;
 
-public class UnknownResponseException extends Exception {
-	private static final long serialVersionUID = -8716125467309979289L;
-	private static final char[] HEX_ARRAY = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F' };
+/**
+ * A DFU error occurred on the remote DFU target.
+ */
+public class RemoteDfuException extends Exception {
+	private static final long serialVersionUID = -6901728550661937942L;
 
-	private final byte[] mResponse;
-	private final int mExpectedOpCode;
+	private final int mState;
 
-	public UnknownResponseException(final String message, final byte[] response, final int expectedOpCode) {
+	public RemoteDfuException(final String message, final int state) {
 		super(message);
 
-		mResponse = response != null ? response : new byte[0];
-		mExpectedOpCode = expectedOpCode;
+		mState = state;
+	}
+
+	public int getErrorNumber() {
+		return mState;
 	}
 
 	@Override
 	public String getMessage() {
-		return String.format("%s (response: %s, expected: 0x10%02X..)", super.getMessage(), bytesToHex(mResponse, 0, mResponse.length), mExpectedOpCode);
-	}
-
-	public static String bytesToHex(final byte[] bytes, final int start, final int length) {
-		if (bytes == null || bytes.length <= start || length <= 0)
-			return "";
-
-		final int maxLength = Math.min(length, bytes.length - start);
-		final char[] hexChars = new char[maxLength * 2];
-		for (int j = 0; j < maxLength; j++) {
-			final int v = bytes[start + j] & 0xFF;
-			hexChars[j * 2] = HEX_ARRAY[v >>> 4];
-			hexChars[j * 2 + 1] = HEX_ARRAY[v & 0x0F];
-		}
-		return "0x" + new String(hexChars);
+		return super.getMessage() + " (error " + mState + ")";
 	}
 }

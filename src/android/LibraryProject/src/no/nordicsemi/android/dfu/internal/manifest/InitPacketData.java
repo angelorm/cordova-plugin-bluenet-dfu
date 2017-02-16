@@ -20,19 +20,51 @@
  * USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package no.nordicsemi.android.dfu.manifest;
+package no.nordicsemi.android.dfu.internal.manifest;
 
 import com.google.gson.annotations.SerializedName;
 
-public class SoftDeviceBootloaderFileInfo extends FileInfo {
-	@SerializedName("bl_size") protected int bootloaderSize;
-	@SerializedName("sd_size") protected int softdeviceSize;
+import java.util.List;
 
-	public int getSoftdeviceSize() {
-		return softdeviceSize;
+public class InitPacketData {
+	@SerializedName("packet_version") protected int packetVersion;
+	@SerializedName("compression_type") protected int compressionType;
+	@SerializedName("application_version") protected long applicationVersion;
+	@SerializedName("device_revision") protected int deviceRevision;
+	@SerializedName("device_type") protected int deviceType;
+	@SerializedName("firmware_crc16") protected int firmwareCRC16;
+	@SerializedName("firmware_hash") protected String firmwareHash;
+	@SerializedName("softdevice_req") protected List<Integer> softdeviceReq;
+
+	public int getPacketVersion() {
+		return packetVersion;
 	}
 
-	public int getBootloaderSize() {
-		return bootloaderSize;
+	public int getCompressionType() {
+		return compressionType;
+	}
+
+	public long getApplicationVersion() {
+		return applicationVersion;
+	}
+
+	public int getDeviceRevision() {
+		return deviceRevision;
+	}
+
+	public int getDeviceType() {
+		return deviceType;
+	}
+
+	public int getFirmwareCRC16() {
+		return firmwareCRC16;
+	}
+
+	public String getFirmwareHash() {
+		return firmwareHash;
+	}
+
+	public List<Integer> getSoftdeviceReq() {
+		return softdeviceReq;
 	}
 }
