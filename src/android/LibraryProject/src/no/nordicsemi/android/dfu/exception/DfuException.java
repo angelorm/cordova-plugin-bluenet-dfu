@@ -20,23 +20,30 @@
  * USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  ************************************************************************************************************************************************/
 
-package no.nordicsemi.android.dfu.internal.scanner;
+package no.nordicsemi.android.dfu.exception;
 
-import android.os.Build;
+import no.nordicsemi.android.dfu.DfuBaseService;
 
 /**
- * The factory should be used to create the {@link BootloaderScanner} instance appropriate for the Android version.
+ * A DFU error occurred on the remote DFU target.
  */
-public class BootloaderScannerFactory {
+public class DfuException extends Exception {
+	private static final long serialVersionUID = -6901728550661937942L;
 
-	/**
-	 * Returns the scanner implementation.
-	 *
-	 * @return the bootloader scanner
-	 */
-	public static BootloaderScanner getScanner() {
-		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
-			return new BootloaderScannerLollipop();
-		return new BootloaderScannerJB();
+	private final int mError;
+
+	public DfuException(final String message, final int state) {
+		super(message);
+
+		mError = state;
+	}
+
+	public int getErrorNumber() {
+		return mError;
+	}
+
+	@Override
+	public String getMessage() {
+		return super.getMessage() + " (error " + (mError & ~DfuBaseService.ERROR_CONNECTION_MASK) + ")";
 	}
 }

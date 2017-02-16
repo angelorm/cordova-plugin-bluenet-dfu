@@ -20,30 +20,28 @@
  * USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  ************************************************************************************************************************************************/
 
-package no.nordicsemi.android.dfu.internal.exception;
-
-import no.nordicsemi.android.dfu.DfuBaseService;
+package no.nordicsemi.android.dfu.exception;
 
 /**
- * A DFU error occurred on the remote DFU target.
+ * Device has disconnected.
  */
-public class DfuException extends Exception {
+public class DeviceDisconnectedException extends Exception {
 	private static final long serialVersionUID = -6901728550661937942L;
 
-	private final int mError;
+	private final int mState;
 
-	public DfuException(final String message, final int state) {
+	public DeviceDisconnectedException(final String message, final int state) {
 		super(message);
 
-		mError = state;
+		mState = state;
 	}
 
-	public int getErrorNumber() {
-		return mError;
+	public int getConnectionState() {
+		return mState;
 	}
 
 	@Override
 	public String getMessage() {
-		return super.getMessage() + " (error " + (mError & ~DfuBaseService.ERROR_CONNECTION_MASK) + ")";
+		return super.getMessage() + " (connection state: " + mState + ")";
 	}
 }

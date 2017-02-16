@@ -20,66 +20,12 @@
  * USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  ************************************************************************************************************************************************/
 
-package no.nordicsemi.android.dfu;
+package no.nordicsemi.android.dfu.exception;
 
-public class DfuProgressListenerAdapter implements DfuProgressListener {
-	@Override
-	public void onDeviceConnecting(final String deviceAddress) {
-		// empty default implementation
-	}
+public class UploadAbortedException extends Exception {
+	private static final long serialVersionUID = -6901728550661937942L;
 
-	@Override
-	public void onDeviceConnected(final String deviceAddress) {
-		// empty default implementation
-	}
-
-	@Override
-	public void onDfuProcessStarting(final String deviceAddress) {
-		// empty default implementation
-	}
-
-	@Override
-	public void onDfuProcessStarted(final String deviceAddress) {
-		// empty default implementation
-	}
-
-	@Override
-	public void onEnablingDfuMode(final String deviceAddress) {
-		// empty default implementation
-	}
-
-	@Override
-	public void onProgressChanged(final String deviceAddress, final int percent, final float speed, final float avgSpeed, final int currentPart, final int partsTotal) {
-		// empty default implementation
-	}
-
-	@Override
-	public void onFirmwareValidating(final String deviceAddress) {
-		// empty default implementation
-	}
-
-	@Override
-	public void onDeviceDisconnecting(final String deviceAddress) {
-		// empty default implementation
-	}
-
-	@Override
-	public void onDeviceDisconnected(final String deviceAddress) {
-		// empty default implementation
-	}
-
-	@Override
-	public void onDfuCompleted(final String deviceAddress) {
-		// empty default implementation
-	}
-
-	@Override
-	public void onDfuAborted(final String deviceAddress) {
-		// empty default implementation
-	}
-
-	@Override
-	public void onError(final String deviceAddress, final int error, final int errorType, final String message) {
-		// empty default implementation
+	public UploadAbortedException() {
+		super();
 	}
 }
