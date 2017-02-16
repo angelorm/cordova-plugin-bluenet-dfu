@@ -1505,7 +1505,7 @@ public abstract class DfuBaseService extends IntentService implements DfuProgres
 	 * <pre>
 	 * &#64;Override
 	 * protected boolean isDebug() {
-	 *     return BuildConfig.DEBUG;
+	 *     return (Boolean)fakeR.getBuildConfigValue("DEBUG");
 	 * }
 	 * </pre>
 	 * @return true to enable LogCat output, false (default) if not
