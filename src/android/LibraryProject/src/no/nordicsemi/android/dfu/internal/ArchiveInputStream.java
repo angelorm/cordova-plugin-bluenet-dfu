@@ -109,7 +109,7 @@ public class ArchiveInputStream extends ZipInputStream {
 		super(stream);
 
 		this.crc32 = new CRC32();
-		this.entries = new HashMap<>();
+		this.entries = new HashMap<String, byte[]>();
 		this.bytesRead = 0;
 		this.bytesReadFromCurrentSource = 0;
 
