@@ -1377,7 +1377,7 @@ public abstract class DfuBaseService extends IntentService implements DfuProgres
 		final String deviceAddress = mDeviceAddress;
 		final String deviceName = mDeviceName != null ? mDeviceName : getString(fakeR.getId("string", "dfu_unknown_name"));
 
-		final NotificationCompat.Builder builder = new NotificationCompat.Builder(this).setSmallIcon(android.R.drawable.stat_sys_upload).setOnlyAlertOnce(true);//.setLargeIcon(largeIcon);
+		final NotificationCompat.Builder builder = new NotificationCompat.Builder(this).setSmallIcon(fakeR.getId("drawable", "stat_sys_upload")).setOnlyAlertOnce(true);//.setLargeIcon(largeIcon);
 		// Android 5
 		builder.setColor(Color.GRAY);
 
@@ -1428,7 +1428,7 @@ public abstract class DfuBaseService extends IntentService implements DfuProgres
 			final Intent abortIntent = new Intent(BROADCAST_ACTION);
 			abortIntent.putExtra(EXTRA_ACTION, ACTION_ABORT);
 			final PendingIntent pendingAbortIntent = PendingIntent.getBroadcast(this, 1, abortIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-			builder.addAction(R.drawable.ic_action_notify_cancel, getString(fakeR.getId("string", "dfu_action_abort")), pendingAbortIntent);
+			builder.addAction(fakeR.getId("drawable", "ic_action_notify_cancel"), getString(fakeR.getId("string", "dfu_action_abort")), pendingAbortIntent);
 		}
 
 		final NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
@@ -1451,12 +1451,12 @@ public abstract class DfuBaseService extends IntentService implements DfuProgres
 		final String deviceName = mDeviceName != null ? mDeviceName : getString(fakeR.getId("string", "dfu_unknown_name"));
 
 		final NotificationCompat.Builder builder = new NotificationCompat.Builder(this)
-				.setSmallIcon(android.R.drawable.stat_sys_upload)
+				.setSmallIcon(fakeR.getId("drawable", "stat_sys_upload"))
 				.setOnlyAlertOnce(true)
 				.setColor(Color.RED)
 				.setOngoing(false)
 				.setContentTitle(getString(fakeR.getId("string", "fu_status_error")))
-				.setSmallIcon(android.R.drawable.stat_sys_upload_done)
+				.setSmallIcon(fakeR.getId("drawable", "stat_sys_upload_done"))
 				.setContentText(getString(fakeR.getId("string", "dfu_status_error_msg")))
 				.setAutoCancel(true);
 
