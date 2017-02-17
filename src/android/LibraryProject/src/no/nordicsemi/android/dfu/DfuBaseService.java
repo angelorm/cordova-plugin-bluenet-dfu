@@ -1436,7 +1436,7 @@ public abstract class DfuBaseService extends IntentService implements DfuProgres
 	}
 
 	/**
-	 * Creates or updates the notification in the Notification Manager. Sends broadcast with given error numbre to the activity.
+	 * Creates or updates the notification in the Notification Manager. Sends broadcast with given error number to the activity.
 	 *
 	 * @param error the error number
 	 */

@@ -57,7 +57,7 @@ public class BluenetDfuPlugin extends CordovaPlugin {
 			String action = intent.getAction();
 
 			if (action.equals(DfuService.BROADCAST_PROGRESS)) {
-				// Log.i(TAG, ">>>>>>>>>>>>>> Progress: " + intent.getExtras().toString());
+				 Log.i(TAG, ">>>>>>>>>>>>>> Progress: " + intent.getExtras().toString());
 
 				int progress = intent.getIntExtra(DfuService.EXTRA_DATA, 0);
 
@@ -129,7 +129,7 @@ public class BluenetDfuPlugin extends CordovaPlugin {
 
 	private void updateProgress(int progress, float speed, float avg_speed) {
 
-		// Log.i(TAG, String.format("<<<<<<<<<<<<<<<<<<<< updateProgress: %d", progress));
+		 Log.i(TAG, String.format("<<<<<<<<<<<<<<<<<<<< updateProgress: %d", progress));
 
 		JSONObject returnObj = new JSONObject();
 		addStatus(returnObj, "progress");
@@ -151,7 +151,7 @@ public class BluenetDfuPlugin extends CordovaPlugin {
 
 	private void updateStatus(String status, boolean error) {
 
-		// Log.i(TAG, "-------------------- updateStatus: " + status);
+		 Log.i(TAG, "-------------------- updateStatus: " + status);
 
 		JSONObject returnObj = new JSONObject();
 		addStatus(returnObj, status);
@@ -180,7 +180,7 @@ public class BluenetDfuPlugin extends CordovaPlugin {
 	@Override
 	public boolean execute(String action, final JSONArray args, final CallbackContext callbackContext) throws JSONException {
 
-		// Log.i(TAG, "incoming call: " + action);
+		Log.i(TAG, "incoming call: " + action);
 		_context = this.cordova.getActivity().getApplicationContext();
 
 		if (uploadFirmwareAction.equals(action)) {
@@ -242,6 +242,7 @@ public class BluenetDfuPlugin extends CordovaPlugin {
 			int fileType = DfuService.TYPE_APPLICATION;
 			if (json.has(PROPERTY_FILE_TYPE)) {
 				fileType = json.getInt(PROPERTY_FILE_TYPE);
+				Log.i(TAG, "fileType: " + fileType.toString());
 			}
 
 			// check if file path or Uri is provided

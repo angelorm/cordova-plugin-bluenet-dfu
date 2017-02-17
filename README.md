@@ -6,7 +6,7 @@ The plugin is updated to the version 1.1.1 of the Android DFU Library.
 
 The following functions are available:
 
-1. `uploadFirmware(updateCallback, errorCallback, parameter)`
+1. `window.bluenetDfu.uploadFirmware(updateCallback, errorCallback, parameter)`
 both callback functions return json objects
 ```
 return: {
@@ -55,8 +55,8 @@ Same for the init file which is optional and doesn't have to be provided.
 ## Common problems and workarounds
 
 ### Manifest merger failed
-EROR: `uses-sdk:minSdkVersion 15 cannot be smaller than version 18 declared in library`.
-* My workaround is to use the following command to run to device `ionic run android -- --minSdkVersion=18`.
+ERROR: `uses-sdk:minSdkVersion 15 cannot be smaller than version 18 declared in library`.
+* My workaround is to use the following command to run to device `cordova run android -- --minSdkVersion=18`.
 
 ### Multiple dex files
 ERROR: `Multiple dex files define Landroid/support/v4/accessibilityservice/AccessibilityServiceInfoCompat$AccessibilityServiceInfoVersionImpl;` or similar.
