@@ -15,11 +15,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DfuBaseService.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DfuBaseService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/DfuBaseService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1248">
-              <caret line="894" column="39" lean-forward="true" selection-start-line="894" selection-start-column="39" selection-end-line="894" selection-end-column="39" />
+            <state relative-caret-position="138">
+              <caret line="916" column="92" lean-forward="false" selection-start-line="916" selection-start-column="92" selection-end-line="916" selection-end-column="92" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="imports" expanded="true" />
@@ -70,11 +70,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BluenetDfuPlugin.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BluenetDfuPlugin.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/android/BluenetDfuPlugin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2940">
-              <caret line="182" column="8" lean-forward="false" selection-start-line="182" selection-start-column="8" selection-end-line="182" selection-end-column="8" />
+            <state relative-caret-position="228">
+              <caret line="244" column="50" lean-forward="false" selection-start-line="244" selection-start-column="50" selection-end-line="244" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -119,12 +119,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-378">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#2769#0" expanded="false" />
-                <element signature="imports" expanded="false" />
-                <element signature="e#1748#1749#0" expanded="false" />
-                <element signature="e#1823#1824#0" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -133,7 +128,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>R.GET</find>
       <find>R.GETid</find>
       <find>R</find>
       <find>getString</find>
@@ -161,8 +155,9 @@
       <find>DfuService</find>
       <find>onServicesDiscovered</find>
       <find>fILETY</find>
-      <find>PROGRESS_DISCONNECTING</find>
       <find>DFUSER</find>
+      <find>fileType</find>
+      <find>PROGRESS_DISCONNECTING</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/android/LibraryProject</dir>
@@ -179,8 +174,8 @@
         <option value="$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/DfuService.java" />
         <option value="$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/internal/ArchiveInputStream.java" />
         <option value="$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/DfuServiceListenerHelper.java" />
-        <option value="$PROJECT_DIR$/android/BluenetDfuPlugin.java" />
         <option value="$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/DfuBaseService.java" />
+        <option value="$PROJECT_DIR$/android/BluenetDfuPlugin.java" />
       </list>
     </option>
   </component>
@@ -1170,37 +1165,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/android/FakeR.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-378">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#2769#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#1748#1749#0" expanded="false" />
-            <element signature="e#1823#1824#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/android/DfuService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="5" column="46" lean-forward="false" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/android/BluenetDfuPlugin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2940">
-          <caret line="182" column="8" lean-forward="false" selection-start-line="182" selection-start-column="8" selection-end-line="182" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/internal/scanner/BootloaderScanner.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-176">
@@ -1229,10 +1193,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/DfuBaseService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1248">
-          <caret line="894" column="39" lean-forward="true" selection-start-line="894" selection-start-column="39" selection-end-line="894" selection-end-column="39" />
+        <state relative-caret-position="138">
+          <caret line="916" column="92" lean-forward="false" selection-start-line="916" selection-start-column="92" selection-end-line="916" selection-end-column="92" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/DfuService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="5" column="46" lean-forward="false" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/FakeR.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-378">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/BluenetDfuPlugin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="244" column="50" lean-forward="false" selection-start-line="244" selection-start-column="50" selection-end-line="244" selection-end-column="50" />
+          <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>

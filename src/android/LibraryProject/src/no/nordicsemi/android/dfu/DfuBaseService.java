@@ -914,7 +914,7 @@ public abstract class DfuBaseService extends IntentService implements DfuProgres
 		try {
 			// Prepare data to send, calculate stream size
 			try {
-				sendLogBroadcast(LOG_LEVEL_VERBOSE, "Opening file...");
+				sendLogBroadcast(LOG_LEVEL_VERBOSE, "Opening file... with type: " + fileType);
 				if (fileUri != null) {
 					is = openInputStream(fileUri, mimeType, mbrSize, fileType);
 				} else if (filePath != null) {
