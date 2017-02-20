@@ -15,11 +15,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DfuBaseService.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DfuBaseService.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/DfuBaseService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="916" column="92" lean-forward="false" selection-start-line="916" selection-start-column="92" selection-end-line="916" selection-end-column="92" />
+            <state relative-caret-position="-2729">
+              <caret line="1387" column="17" lean-forward="false" selection-start-line="1387" selection-start-column="17" selection-end-line="1387" selection-end-column="17" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="imports" expanded="true" />
@@ -28,22 +28,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DfuServiceListenerHelper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/DfuServiceListenerHelper.java">
+      <file leaf-file-name="DfuServiceProvider.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/DfuServiceProvider.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="192" column="54" lean-forward="false" selection-start-line="192" selection-start-column="54" selection-end-line="192" selection-end-column="54" />
-              <folding />
+            <state relative-caret-position="162">
+              <caret line="31" column="81" lean-forward="false" selection-start-line="31" selection-start-column="81" selection-end-line="31" selection-end-column="81" />
+              <folding>
+                <element signature="n#!!doc" expanded="false" />
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NotificationActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/android/NotificationActivity.java">
+      <file leaf-file-name="BaseCustomDfuImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/BaseCustomDfuImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="12" column="26" lean-forward="true" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+            <state relative-caret-position="8136">
+              <caret line="488" column="21" lean-forward="false" selection-start-line="488" selection-start-column="21" selection-end-line="488" selection-end-column="21" />
               <folding>
+                <element signature="n#!!doc" expanded="false" />
                 <element signature="imports" expanded="false" />
               </folding>
             </state>
@@ -53,8 +57,31 @@
       <file leaf-file-name="SecureDfuImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/SecureDfuImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69">
-              <caret line="265" column="0" lean-forward="true" selection-start-line="265" selection-start-column="0" selection-end-line="265" selection-end-column="0" />
+            <state relative-caret-position="11538">
+              <caret line="690" column="32" lean-forward="false" selection-start-line="690" selection-start-column="32" selection-end-line="690" selection-end-column="32" />
+              <folding>
+                <element signature="n#!!doc" expanded="false" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#6607#6608#0" expanded="false" />
+                <element signature="e#6636#6637#0" expanded="false" />
+                <element signature="e#7891#7892#0" expanded="false" />
+                <element signature="e#7923#7924#0" expanded="false" />
+                <element signature="e#7989#7990#0" expanded="false" />
+                <element signature="e#8025#8026#0" expanded="false" />
+                <element signature="e#8085#8086#0" expanded="false" />
+                <element signature="e#8114#8115#0" expanded="false" />
+                <element signature="e#8164#8165#0" expanded="false" />
+                <element signature="e#8194#8195#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DfuLogListener.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/DfuLogListener.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="35" column="40" lean-forward="false" selection-start-line="35" selection-start-column="40" selection-end-line="35" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -65,51 +92,72 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="72">
               <caret line="5" column="46" lean-forward="false" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BluenetDfuPlugin.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/android/BluenetDfuPlugin.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="244" column="50" lean-forward="false" selection-start-line="244" selection-start-column="50" selection-end-line="244" selection-end-column="50" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BootloaderScanner.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/internal/scanner/BootloaderScanner.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-176">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BootloaderScannerLollipop.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/internal/scanner/BootloaderScannerLollipop.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-324">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="false" />
+                <element signature="e#232#233#0" expanded="false" />
+                <element signature="e#272#273#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DfuService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/DfuService.java">
+      <file leaf-file-name="LegacyDfuImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/LegacyDfuImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-230">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="324">
+              <caret line="54" column="62" lean-forward="false" selection-start-line="54" selection-start-column="62" selection-end-line="54" selection-end-column="62" />
+              <folding>
+                <element signature="n#!!doc" expanded="false" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#7021#7022#0" expanded="false" />
+                <element signature="e#7050#7051#0" expanded="false" />
+                <element signature="e#7706#7707#0" expanded="false" />
+                <element signature="e#7738#7739#0" expanded="false" />
+                <element signature="e#7804#7805#0" expanded="false" />
+                <element signature="e#7840#7841#0" expanded="false" />
+                <element signature="e#7900#7901#0" expanded="false" />
+                <element signature="e#7929#7930#0" expanded="false" />
+                <element signature="e#7979#7980#0" expanded="false" />
+                <element signature="e#8009#8010#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BaseDfuImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/BaseDfuImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="18">
+              <caret line="598" column="40" lean-forward="false" selection-start-line="598" selection-start-column="34" selection-end-line="598" selection-end-column="40" />
+              <folding>
+                <element signature="n#!!doc" expanded="false" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#7829#7830#0" expanded="false" />
+                <element signature="e#7877#7878#0" expanded="false" />
+                <element signature="e#7947#7948#0" expanded="false" />
+                <element signature="e#7991#7992#0" expanded="false" />
+                <element signature="e#8647#8648#0" expanded="false" />
+                <element signature="e#8669#8670#0" expanded="false" />
+                <element signature="e#8704#8705#0" expanded="false" />
+                <element signature="e#8725#8726#0" expanded="false" />
+                <element signature="e#28071#28072#0" expanded="false" />
+                <element signature="e#28097#28098#0" expanded="false" />
+                <element signature="e#28152#28153#0" expanded="false" />
+                <element signature="e#28181#28182#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BluenetDfuPlugin.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/android/BluenetDfuPlugin.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4122">
+              <caret line="246" column="48" lean-forward="false" selection-start-line="246" selection-start-column="48" selection-end-line="246" selection-end-column="48" />
+              <folding>
+                <element signature="e#5818#5819#0" expanded="false" />
+                <element signature="e#5874#5875#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -117,9 +165,14 @@
       <file leaf-file-name="FakeR.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/android/FakeR.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-378">
+            <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+              <folding>
+                <element signature="e#0#2769#0" expanded="false" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#1748#1749#0" expanded="false" />
+                <element signature="e#1823#1824#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -128,24 +181,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>R.GETid</find>
-      <find>R</find>
-      <find>getString</find>
-      <find>getString(</find>
-      <find>oncreate</find>
-      <find>BuildConfig.DEBUG</find>
-      <find>R.id.</find>
-      <find>switch</find>
-      <find>entries</find>
-      <find>&lt;&gt;()</find>
-      <find>fakeR</find>
-      <find>r.dra</find>
-      <find>LocalBroadcastManager</find>
-      <find>&quot;error</find>
-      <find>EXTRA_DATA</find>
-      <find>EXTRA_ERROR_TYPE</find>
-      <find>TYPE</find>
-      <find>EXTRA_DEVICE_ADDRESS</find>
       <find>Build.DEBUG</find>
       <find>isDebug</find>
       <find>IntentService</find>
@@ -158,6 +193,24 @@
       <find>DFUSER</find>
       <find>fileType</find>
       <find>PROGRESS_DISCONNECTING</find>
+      <find>FILEtY</find>
+      <find>startService</find>
+      <find>BOND</find>
+      <find>DFU Service not foun</find>
+      <find>DFU_SERVICE_UUID</find>
+      <find>DFU service does n</find>
+      <find>DFU_VERSION</find>
+      <find>SERVICE_CHANGED_UUID</find>
+      <find>MAX_PACKET_SIZE</find>
+      <find>mConnectionState</find>
+      <find>readNotificationResponse</find>
+      <find>mLock</find>
+      <find>dfu_service</find>
+      <find>notifyall</find>
+      <find>notify</find>
+      <find>wait</find>
+      <find>wait()</find>
+      <find>PROGRESS_STARTING</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/android/LibraryProject</dir>
@@ -174,16 +227,16 @@
         <option value="$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/DfuService.java" />
         <option value="$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/internal/ArchiveInputStream.java" />
         <option value="$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/DfuServiceListenerHelper.java" />
-        <option value="$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/DfuBaseService.java" />
         <option value="$PROJECT_DIR$/android/BluenetDfuPlugin.java" />
+        <option value="$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/DfuBaseService.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="256" />
-    <option name="y" value="74" />
-    <option name="width" value="1664" />
-    <option name="height" value="1000" />
+    <option name="x" value="262" />
+    <option name="y" value="71" />
+    <option name="width" value="1609" />
+    <option name="height" value="1009" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -200,9 +253,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -493,6 +543,9 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -718,8 +771,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="256" y="74" width="1664" height="1000" extended-state="0" />
-    <editor active="true" />
+    <frame x="262" y="71" width="1609" height="1009" extended-state="1" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -735,8 +788,8 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30528846" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.329718" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28091982" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3319012" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -760,8 +813,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/DfuBaseService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="17406">
+          <caret line="1030" column="54" lean-forward="false" selection-start-line="1030" selection-start-column="54" selection-end-line="1030" selection-end-column="54" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
@@ -769,7 +822,125 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/FakeR.java">
+    <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/DfuServiceProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="31" column="81" lean-forward="false" selection-start-line="31" selection-start-column="81" selection-end-line="31" selection-end-column="81" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/BaseCustomDfuImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8136">
+          <caret line="488" column="21" lean-forward="false" selection-start-line="488" selection-start-column="21" selection-end-line="488" selection-end-column="21" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/SecureDfuImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11538">
+          <caret line="690" column="32" lean-forward="false" selection-start-line="690" selection-start-column="32" selection-end-line="690" selection-end-column="32" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#6607#6608#0" expanded="false" />
+            <element signature="e#6636#6637#0" expanded="false" />
+            <element signature="e#7891#7892#0" expanded="false" />
+            <element signature="e#7923#7924#0" expanded="false" />
+            <element signature="e#7989#7990#0" expanded="false" />
+            <element signature="e#8025#8026#0" expanded="false" />
+            <element signature="e#8085#8086#0" expanded="false" />
+            <element signature="e#8114#8115#0" expanded="false" />
+            <element signature="e#8164#8165#0" expanded="false" />
+            <element signature="e#8194#8195#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/DfuLogListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="35" column="40" lean-forward="false" selection-start-line="35" selection-start-column="40" selection-end-line="35" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/DfuService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="5" column="46" lean-forward="false" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#232#233#0" expanded="false" />
+            <element signature="e#272#273#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/LegacyDfuImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="54" column="62" lean-forward="true" selection-start-line="54" selection-start-column="62" selection-end-line="54" selection-end-column="62" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#7021#7022#0" expanded="false" />
+            <element signature="e#7050#7051#0" expanded="false" />
+            <element signature="e#7706#7707#0" expanded="false" />
+            <element signature="e#7738#7739#0" expanded="false" />
+            <element signature="e#7804#7805#0" expanded="false" />
+            <element signature="e#7840#7841#0" expanded="false" />
+            <element signature="e#7900#7901#0" expanded="false" />
+            <element signature="e#7929#7930#0" expanded="false" />
+            <element signature="e#7979#7980#0" expanded="false" />
+            <element signature="e#8009#8010#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/BaseDfuImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#7829#7830#0" expanded="false" />
+            <element signature="e#7877#7878#0" expanded="false" />
+            <element signature="e#7947#7948#0" expanded="false" />
+            <element signature="e#7991#7992#0" expanded="false" />
+            <element signature="e#8647#8648#0" expanded="false" />
+            <element signature="e#8669#8670#0" expanded="false" />
+            <element signature="e#8704#8705#0" expanded="false" />
+            <element signature="e#8725#8726#0" expanded="false" />
+            <element signature="e#28071#28072#0" expanded="false" />
+            <element signature="e#28097#28098#0" expanded="false" />
+            <element signature="e#28152#28153#0" expanded="false" />
+            <element signature="e#28181#28182#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/BluenetDfuPlugin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4122">
+          <caret line="246" column="48" lean-forward="false" selection-start-line="246" selection-start-column="48" selection-end-line="246" selection-end-column="48" />
+          <folding>
+            <element signature="e#5818#5819#0" expanded="false" />
+            <element signature="e#5874#5875#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/FakeR.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -778,122 +949,6 @@
             <element signature="imports" expanded="false" />
             <element signature="e#1748#1749#0" expanded="false" />
             <element signature="e#1823#1824#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/DfuServiceListenerHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1368">
-          <caret line="111" column="101" lean-forward="false" selection-start-line="111" selection-start-column="101" selection-end-line="111" selection-end-column="101" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/BaseCustomDfuImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/SecureDfuImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/LegacyDfuImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/internal/ArchiveInputStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1314">
-          <caret line="111" column="49" lean-forward="false" selection-start-line="111" selection-start-column="49" selection-end-line="111" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#14267#14268#0" expanded="false" />
-            <element signature="e#14285#14286#0" expanded="false" />
-            <element signature="e#15362#15363#0" expanded="false" />
-            <element signature="e#15392#15393#0" expanded="false" />
-            <element signature="e#15537#15538#0" expanded="false" />
-            <element signature="e#15559#15560#0" expanded="false" />
-            <element signature="e#19258#19259#0" expanded="false" />
-            <element signature="e#19286#19287#0" expanded="false" />
-            <element signature="e#19549#19550#0" expanded="false" />
-            <element signature="e#19577#19578#0" expanded="false" />
-            <element signature="e#19843#19844#0" expanded="false" />
-            <element signature="e#19872#19873#0" expanded="false" />
-            <element signature="e#20455#20456#0" expanded="false" />
-            <element signature="e#20484#20485#0" expanded="false" />
-            <element signature="e#20742#20743#0" expanded="false" />
-            <element signature="e#20776#20777#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/internal/HexInputStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="35" column="4" lean-forward="false" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="4" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#6543#6544#0" expanded="false" />
-            <element signature="e#6578#6579#0" expanded="false" />
-            <element signature="e#7616#7617#0" expanded="false" />
-            <element signature="e#7639#7640#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/internal/scanner/BootloaderScanner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/internal/manifest/InitPacketData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#2757#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#2277#2278#0" expanded="false" />
-            <element signature="e#2304#2305#0" expanded="false" />
-            <element signature="e#2340#2341#0" expanded="false" />
-            <element signature="e#2369#2370#0" expanded="false" />
-            <element signature="e#2409#2410#0" expanded="false" />
-            <element signature="e#2441#2442#0" expanded="false" />
-            <element signature="e#2476#2477#0" expanded="false" />
-            <element signature="e#2504#2505#0" expanded="false" />
-            <element signature="e#2535#2536#0" expanded="false" />
-            <element signature="e#2559#2560#0" expanded="false" />
-            <element signature="e#2593#2594#0" expanded="false" />
-            <element signature="e#2620#2621#0" expanded="false" />
-            <element signature="e#2656#2657#0" expanded="false" />
-            <element signature="e#2682#2683#0" expanded="false" />
-            <element signature="e#2726#2727#0" expanded="false" />
-            <element signature="e#2753#2754#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -909,11 +964,115 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/DfuServiceProvider.java">
+    <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/FakeR.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="36" column="4" lean-forward="true" selection-start-line="36" selection-start-column="4" selection-end-line="36" selection-end-column="4" />
-          <folding />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/DfuServiceListenerHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1368">
+          <caret line="111" column="101" lean-forward="false" selection-start-line="111" selection-start-column="101" selection-end-line="111" selection-end-column="101" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#3561#3562#0" expanded="false" />
+            <element signature="e#3613#3614#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/BaseCustomDfuImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/SecureDfuImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#6607#6608#0" expanded="false" />
+            <element signature="e#6636#6637#0" expanded="false" />
+            <element signature="e#7891#7892#0" expanded="false" />
+            <element signature="e#7923#7924#0" expanded="false" />
+            <element signature="e#7989#7990#0" expanded="false" />
+            <element signature="e#8025#8026#0" expanded="false" />
+            <element signature="e#8085#8086#0" expanded="false" />
+            <element signature="e#8114#8115#0" expanded="false" />
+            <element signature="e#8164#8165#0" expanded="false" />
+            <element signature="e#8194#8195#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/LegacyDfuImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#7021#7022#0" expanded="false" />
+            <element signature="e#7050#7051#0" expanded="false" />
+            <element signature="e#7706#7707#0" expanded="false" />
+            <element signature="e#7738#7739#0" expanded="false" />
+            <element signature="e#7804#7805#0" expanded="false" />
+            <element signature="e#7840#7841#0" expanded="false" />
+            <element signature="e#7900#7901#0" expanded="false" />
+            <element signature="e#7929#7930#0" expanded="false" />
+            <element signature="e#7979#7980#0" expanded="false" />
+            <element signature="e#8009#8010#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/internal/ArchiveInputStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1314">
+          <caret line="111" column="49" lean-forward="false" selection-start-line="111" selection-start-column="49" selection-end-line="111" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/internal/HexInputStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="35" column="4" lean-forward="false" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/internal/scanner/BootloaderScanner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/internal/manifest/InitPacketData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/DfuBaseService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -938,46 +1097,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/DfuLogListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="34" column="63" lean-forward="true" selection-start-line="34" selection-start-column="63" selection-end-line="34" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/BaseDfuImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-34">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/internal/ArchiveInputStream.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1314">
           <caret line="111" column="49" lean-forward="false" selection-start-line="111" selection-start-column="49" selection-end-line="111" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#14267#14268#0" expanded="false" />
-            <element signature="e#14285#14286#0" expanded="false" />
-            <element signature="e#15362#15363#0" expanded="false" />
-            <element signature="e#15392#15393#0" expanded="false" />
-            <element signature="e#15537#15538#0" expanded="false" />
-            <element signature="e#15559#15560#0" expanded="false" />
-            <element signature="e#19258#19259#0" expanded="false" />
-            <element signature="e#19286#19287#0" expanded="false" />
-            <element signature="e#19549#19550#0" expanded="false" />
-            <element signature="e#19577#19578#0" expanded="false" />
-            <element signature="e#19843#19844#0" expanded="false" />
-            <element signature="e#19872#19873#0" expanded="false" />
-            <element signature="e#20455#20456#0" expanded="false" />
-            <element signature="e#20484#20485#0" expanded="false" />
-            <element signature="e#20742#20743#0" expanded="false" />
-            <element signature="e#20776#20777#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -985,14 +1108,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="35" column="4" lean-forward="false" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="4" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#6543#6544#0" expanded="false" />
-            <element signature="e#6578#6579#0" expanded="false" />
-            <element signature="e#7616#7617#0" expanded="false" />
-            <element signature="e#7639#7640#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1000,26 +1115,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#2757#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#2277#2278#0" expanded="false" />
-            <element signature="e#2304#2305#0" expanded="false" />
-            <element signature="e#2340#2341#0" expanded="false" />
-            <element signature="e#2369#2370#0" expanded="false" />
-            <element signature="e#2409#2410#0" expanded="false" />
-            <element signature="e#2441#2442#0" expanded="false" />
-            <element signature="e#2476#2477#0" expanded="false" />
-            <element signature="e#2504#2505#0" expanded="false" />
-            <element signature="e#2535#2536#0" expanded="false" />
-            <element signature="e#2559#2560#0" expanded="false" />
-            <element signature="e#2593#2594#0" expanded="false" />
-            <element signature="e#2620#2621#0" expanded="false" />
-            <element signature="e#2656#2657#0" expanded="false" />
-            <element signature="e#2682#2683#0" expanded="false" />
-            <element signature="e#2726#2727#0" expanded="false" />
-            <element signature="e#2753#2754#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1027,7 +1122,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-74">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1035,9 +1129,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2322">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1045,18 +1136,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="465">
           <caret line="360" column="74" lean-forward="false" selection-start-line="360" selection-start-column="61" selection-end-line="360" selection-end-column="74" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#3323#3324#0" expanded="false" />
-            <element signature="e#3364#3365#0" expanded="false" />
-            <element signature="e#14924#14925#0" expanded="false" />
-            <element signature="e#14964#14965#0" expanded="false" />
-            <element signature="e#15349#15350#0" expanded="false" />
-            <element signature="e#15390#15391#0" expanded="false" />
-            <element signature="e#15788#15789#0" expanded="false" />
-            <element signature="e#15833#15834#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1074,26 +1153,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/BaseCustomDfuImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="485" column="50" lean-forward="false" selection-start-line="485" selection-start-column="50" selection-end-line="485" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/DfuServiceController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="31" column="54" lean-forward="false" selection-start-line="31" selection-start-column="54" selection-end-line="31" selection-end-column="54" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#4021#4022#0" expanded="false" />
-            <element signature="e#4042#4043#0" expanded="false" />
-            <element signature="e#4120#4121#0" expanded="false" />
-            <element signature="e#4142#4143#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1101,28 +1164,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1076">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/LegacyDfuImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="615" column="53" lean-forward="false" selection-start-line="615" selection-start-column="53" selection-end-line="615" selection-end-column="53" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#7021#7022#0" expanded="false" />
-            <element signature="e#7050#7051#0" expanded="false" />
-            <element signature="e#7706#7707#0" expanded="false" />
-            <element signature="e#7738#7739#0" expanded="false" />
-            <element signature="e#7804#7805#0" expanded="false" />
-            <element signature="e#7840#7841#0" expanded="false" />
-            <element signature="e#7900#7901#0" expanded="false" />
-            <element signature="e#7929#7930#0" expanded="false" />
-            <element signature="e#7979#7980#0" expanded="false" />
-            <element signature="e#8009#8010#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1130,20 +1171,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-358">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#2769#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#1748#1749#0" expanded="false" />
-            <element signature="e#1823#1824#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/SecureDfuImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="265" column="0" lean-forward="true" selection-start-line="265" selection-start-column="0" selection-end-line="265" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1151,17 +1178,19 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="192" column="54" lean-forward="false" selection-start-line="192" selection-start-column="54" selection-end-line="192" selection-end-column="54" />
-          <folding />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#3561#3562#0" expanded="false" />
+            <element signature="e#3613#3614#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/android/NotificationActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
-          <caret line="12" column="26" lean-forward="true" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <caret line="12" column="26" lean-forward="false" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -1169,7 +1198,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-176">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1187,18 +1215,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-230">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/DfuBaseService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="916" column="92" lean-forward="false" selection-start-line="916" selection-start-column="92" selection-end-line="916" selection-end-column="92" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1206,23 +1222,139 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="5" column="46" lean-forward="false" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="46" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#232#233#0" expanded="false" />
+            <element signature="e#272#273#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/android/FakeR.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-378">
+        <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#2769#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#1748#1749#0" expanded="false" />
+            <element signature="e#1823#1824#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/android/BluenetDfuPlugin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="244" column="50" lean-forward="false" selection-start-line="244" selection-start-column="50" selection-end-line="244" selection-end-column="50" />
+        <state relative-caret-position="4122">
+          <caret line="246" column="48" lean-forward="false" selection-start-line="246" selection-start-column="48" selection-end-line="246" selection-end-column="48" />
           <folding>
+            <element signature="e#5818#5819#0" expanded="false" />
+            <element signature="e#5874#5875#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/BaseCustomDfuImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8136">
+          <caret line="488" column="21" lean-forward="false" selection-start-line="488" selection-start-column="21" selection-end-line="488" selection-end-column="21" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/DfuServiceProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="31" column="81" lean-forward="false" selection-start-line="31" selection-start-column="81" selection-end-line="31" selection-end-column="81" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/LegacyDfuImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="54" column="62" lean-forward="false" selection-start-line="54" selection-start-column="62" selection-end-line="54" selection-end-column="62" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#7021#7022#0" expanded="false" />
+            <element signature="e#7050#7051#0" expanded="false" />
+            <element signature="e#7706#7707#0" expanded="false" />
+            <element signature="e#7738#7739#0" expanded="false" />
+            <element signature="e#7804#7805#0" expanded="false" />
+            <element signature="e#7840#7841#0" expanded="false" />
+            <element signature="e#7900#7901#0" expanded="false" />
+            <element signature="e#7929#7930#0" expanded="false" />
+            <element signature="e#7979#7980#0" expanded="false" />
+            <element signature="e#8009#8010#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/DfuLogListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="35" column="40" lean-forward="false" selection-start-line="35" selection-start-column="40" selection-end-line="35" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/SecureDfuImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11538">
+          <caret line="690" column="32" lean-forward="false" selection-start-line="690" selection-start-column="32" selection-end-line="690" selection-end-column="32" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#6607#6608#0" expanded="false" />
+            <element signature="e#6636#6637#0" expanded="false" />
+            <element signature="e#7891#7892#0" expanded="false" />
+            <element signature="e#7923#7924#0" expanded="false" />
+            <element signature="e#7989#7990#0" expanded="false" />
+            <element signature="e#8025#8026#0" expanded="false" />
+            <element signature="e#8085#8086#0" expanded="false" />
+            <element signature="e#8114#8115#0" expanded="false" />
+            <element signature="e#8164#8165#0" expanded="false" />
+            <element signature="e#8194#8195#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/BaseDfuImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="598" column="40" lean-forward="false" selection-start-line="598" selection-start-column="34" selection-end-line="598" selection-end-column="40" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#7829#7830#0" expanded="false" />
+            <element signature="e#7877#7878#0" expanded="false" />
+            <element signature="e#7947#7948#0" expanded="false" />
+            <element signature="e#7991#7992#0" expanded="false" />
+            <element signature="e#8647#8648#0" expanded="false" />
+            <element signature="e#8669#8670#0" expanded="false" />
+            <element signature="e#8704#8705#0" expanded="false" />
+            <element signature="e#8725#8726#0" expanded="false" />
+            <element signature="e#28071#28072#0" expanded="false" />
+            <element signature="e#28097#28098#0" expanded="false" />
+            <element signature="e#28152#28153#0" expanded="false" />
+            <element signature="e#28181#28182#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/LibraryProject/src/no/nordicsemi/android/dfu/DfuBaseService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2729">
+          <caret line="1387" column="17" lean-forward="false" selection-start-line="1387" selection-start-column="17" selection-end-line="1387" selection-end-column="17" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>

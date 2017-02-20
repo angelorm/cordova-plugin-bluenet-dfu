@@ -242,8 +242,9 @@ public class BluenetDfuPlugin extends CordovaPlugin {
 			int fileType = DfuService.TYPE_APPLICATION;
 			if (json.has(PROPERTY_FILE_TYPE)) {
 				fileType = json.getInt(PROPERTY_FILE_TYPE);
-				Log.i(TAG, "fileType: " + fileType);
+
 			}
+            Log.i(TAG, "fileType: " + fileType);
 
 			// check if file path or Uri is provided
 			boolean hasFilePath = true;

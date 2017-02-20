@@ -1094,7 +1094,9 @@ public abstract class DfuBaseService extends IntentService implements DfuProgres
 
 				// Begin the DFU depending on the implementation
 				if (dfuService.initialize(intent, gatt, fileType, is, initIs)) {
+					Log.i(TAG, "Begin the DFU depending on the implementation");
 					dfuService.performDfu(intent);
+                    Log.i(TAG, "After DFU");
 				}
 			} catch (final UploadAbortedException e) {
 				logw("Upload aborted");
@@ -1120,8 +1122,11 @@ public abstract class DfuBaseService extends IntentService implements DfuProgres
 				loge(e.getMessage());
 				terminateConnection(gatt, e.getErrorNumber() /* we return the whole error number, including the error type mask */);
 			} finally {
+				Log.i(TAG, "Finally cycle");
 				if (dfuService != null) {
+                    Log.i(TAG, "Release");
 					dfuService.release();
+                    Log.i(TAG, "After release");
 				}
 			}
 		} finally {
@@ -1377,7 +1382,7 @@ public abstract class DfuBaseService extends IntentService implements DfuProgres
 		final String deviceAddress = mDeviceAddress;
 		final String deviceName = mDeviceName != null ? mDeviceName : getString(fakeR.getId("string", "dfu_unknown_name"));
 
-		final NotificationCompat.Builder builder = new NotificationCompat.Builder(this).setSmallIcon(fakeR.getId("drawable", "stat_sys_upload")).setOnlyAlertOnce(true);//.setLargeIcon(largeIcon);
+		final NotificationCompat.Builder builder = new NotificationCompat.Builder(this).setSmallIcon(fakeR.getId("drawable", "ic_stat_notify_dfu")).setOnlyAlertOnce(true);//.setLargeIcon(largeIcon);
 		// Android 5
 		builder.setColor(Color.GRAY);
 
@@ -1400,11 +1405,11 @@ public abstract class DfuBaseService extends IntentService implements DfuProgres
 						.setProgress(100, 0, true);
 				break;
 			case PROGRESS_COMPLETED:
-				builder.setOngoing(false).setContentTitle(getString(fakeR.getId("string", "dfu_status_completed"))).setSmallIcon(fakeR.getId("drawable", "stat_sys_upload_done"))
+				builder.setOngoing(false).setContentTitle(getString(fakeR.getId("string", "dfu_status_completed"))).setSmallIcon(fakeR.getId("drawable", "ic_stat_notify_dfu"))
 						.setContentText(getString(fakeR.getId("string", "dfu_status_completed_msg"))).setAutoCancel(true).setColor(0xFF00B81A);
 				break;
 			case PROGRESS_ABORTED:
-				builder.setOngoing(false).setContentTitle(getString(fakeR.getId("string", "dfu_status_aborted"))).setSmallIcon(fakeR.getId("drawable", "stat_sys_upload_done"))
+				builder.setOngoing(false).setContentTitle(getString(fakeR.getId("string", "dfu_status_aborted"))).setSmallIcon(fakeR.getId("drawable", "ic_stat_notify_dfu"))
 						.setContentText(getString(fakeR.getId("string", "dfu_status_aborted_msg"))).setAutoCancel(true);
 				break;
 			default:
@@ -1451,12 +1456,12 @@ public abstract class DfuBaseService extends IntentService implements DfuProgres
 		final String deviceName = mDeviceName != null ? mDeviceName : getString(fakeR.getId("string", "dfu_unknown_name"));
 
 		final NotificationCompat.Builder builder = new NotificationCompat.Builder(this)
-				.setSmallIcon(fakeR.getId("drawable", "stat_sys_upload"))
+				.setSmallIcon(fakeR.getId("drawable", "ic_stat_notify_dfu"))
 				.setOnlyAlertOnce(true)
 				.setColor(Color.RED)
 				.setOngoing(false)
 				.setContentTitle(getString(fakeR.getId("string", "fu_status_error")))
-				.setSmallIcon(fakeR.getId("drawable", "stat_sys_upload_done"))
+				.setSmallIcon(fakeR.getId("drawable", "ic_stat_notify_dfu"))
 				.setContentText(getString(fakeR.getId("string", "dfu_status_error_msg")))
 				.setAutoCancel(true);
 
