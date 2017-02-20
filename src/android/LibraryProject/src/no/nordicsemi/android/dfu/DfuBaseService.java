@@ -1460,7 +1460,7 @@ public abstract class DfuBaseService extends IntentService implements DfuProgres
 				.setOnlyAlertOnce(true)
 				.setColor(Color.RED)
 				.setOngoing(false)
-				.setContentTitle(getString(fakeR.getId("string", "fu_status_error")))
+				.setContentTitle(getString(fakeR.getId("string", "dfu_status_error")))
 				.setSmallIcon(fakeR.getId("drawable", "ic_stat_notify_dfu"))
 				.setContentText(getString(fakeR.getId("string", "dfu_status_error_msg")))
 				.setAutoCancel(true);
